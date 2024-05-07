@@ -1,0 +1,1354 @@
+.ecm-messaging-container {
+    position: fixed;
+    bottom: 0;
+    right: 1px;
+    width: 100%; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.ecm-chat-box {
+    background: #ddd;
+    padding: 40px 15px 20px 15px;
+    color: black;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	
+}
+.ecm-chat-box:before {
+    content: 'Messaging';
+    font-weight: bold;
+    font-size: 18px;
+	position: absolute;
+	top:10px;
+}
+.ecm-chat-message-self {
+    text-align: right;
+    /* other styles for messages sent by the user */
+}
+
+.ecm-chat-message-other {
+    text-align: left;
+    /* other styles for messages received from others */
+}
+.ticker-wrapper {
+    background: #5b0167;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    padding: 5px 0;
+}
+
+#ticker {
+  overflow: hidden;
+  width: 1000%;
+  margin: 0;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 50px;
+  font-size: 14px;
+  color: white;
+}
+.ticker-item a{
+	color:white;
+}
+i.fa-solid.fa-up-right-from-square{
+	font-size:11px;
+	position: relative;
+	top:-1px;
+}
+.ecm-chat-messages {
+    max-height: 90%;
+    display: flex;
+    flex-direction:column;
+    overflow-y: scroll;
+    padding: 0 5px 0 5px;
+    height: 30vh;
+	background: #949494;
+}
+
+.forum-posts-ticker ul {
+    display: flex;
+    animation: ticker 30s linear infinite;
+	margin:0;
+	width:max-content;
+}
+
+.forum-posts-ticker li {
+    padding-right: 2em;
+}
+.forum-posts-ticker li a{
+   color:white !important; /* Space between items */
+font-size: 16px;
+}
+span.callout {
+    background: #dbedf5;
+    padding: 5px;
+}
+#tab-comments .comment, #tab-comments .childcomment {
+    padding: 10px;
+}
+.comment-container {
+    background: #f0f0f0;
+}
+._saved-post ul li {
+    font-size: 16px;
+}
+div#tab-replies h3 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+/* Style for the saved posts container */
+#tab-saved-posts {
+    margin-top: 20px;
+}
+
+/* Style for each saved post */
+._saved-post {
+	padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+    font-size: 16px;
+}
+
+/* Style for post titles */
+._saved-post h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+
+/* Style for post content */
+._saved-post p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Style for the "Remove" link/button */
+._saved-post .remove-saved-item {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #2c0032;; /* Change to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Style for the "Remove" link/button on hover */
+._saved-post .remove-saved-item:hover {
+    background-color: #5d1167; /* Change to your desired hover color */
+}
+
+/* Style for the icon before each saved post */
+._saved-post h3::before {
+    content: '\f005';
+    font-family: FontAwesome;
+    margin-right: 5px;
+    font-size: 18px;
+    color: #0073e6;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+div#tab-comments h3 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); } /* Start from right (off-screen) */
+    100% { transform: translateX(-100%); } /* Move to left (off-screen) */
+}
+.friend-request {
+    background: #0054b4;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+.friend-request span {
+    font-size: 18px;
+}
+button.accept-friend, button.decline-friend {
+    background: #2c0032;
+    border: 0;
+    color: white;
+    padding: 10px;
+    margin: 0 10px;
+}
+button.accept-friend:hover, button.decline-friend:hover{
+	cursor: pointer !important;
+}
+textarea.ecm-chat-input {
+    margin: 10px 0;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+#ecmChatRecipient {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+/* Style for the dropdown options */
+#ecmChatRecipient option {
+    padding: 5px;              /* Padding for each option */
+    background-color: white;   /* Background color for options */
+}
+
+/* Additional styles for hover or focus states can be added for enhanced interactivity */
+#ecmChatRecipient:hover,
+#ecmChatRecipient:focus {
+    border-color: #888;        /* Change border color on hover/focus */
+    outline: none;             /* Remove default outline */
+}
+button.ecm-chat-send {
+    background: #2c0032;
+    border: 0;
+    color: white;
+    padding: 10px;
+}
+.ecm-close-btn {
+    background-color: #2c0032;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+
+.ecm-close-btn:hover {
+    background-color: #ff4040; /* Slightly darker red on hover */
+}
+button#ecmOpenChat {
+    background: #42024b;
+    border: 0;
+    color: white;
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer !important;
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+    z-index: 999;
+	border-radius: 25px;
+}
+.bubble {
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    display: inline-block;
+    max-width: 80%;
+	color:white;
+}
+
+.ecm-chat-message-self {
+    background-color: #b62ac9;
+    align-self: flex-end;
+	position: relative;
+	margin-bottom:15px;
+}
+.bubble.ecm-chat-message-self:after {
+    content: '';
+    width: 10px;
+    height: 20px;
+    background: #b62ac9;
+    bottom: -7px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    transform: rotate(45deg);
+}
+
+.ecm-chat-message-other {
+    background-color: #9722a7;
+    align-self: flex-start;
+	position: relative;
+	margin-bottom:15px;
+}
+.bubble.ecm-chat-message-other:after {
+    content: '';
+    width: 10px;
+    height: 20px;
+    background: #9722a7;
+    bottom: -7px;
+    display: block;
+    position: absolute;
+    left: 10px;
+    transform: rotate(-45deg);
+}
+.ecm-chat-message {
+    display: none;
+}
+/* Styles the scrollbar itself */
+.ecm-chat-messages::-webkit-scrollbar {
+    width: 5px; /* width of the entire scrollbar */
+}
+
+/* Styles the scrollbar track */
+.ecm-chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the tracking area */
+}
+
+/* Styles the scrollbar thumb (the draggable part) */
+.ecm-chat-messages::-webkit-scrollbar-thumb {
+    background: #2c0032; /* color of the scroll thumb */
+}
+
+/* Styles the scrollbar thumb on hover */
+.ecm-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #2c0032; /* color when hovered */
+}
+.ecm-add-friend {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.ecm-add-friend .fas {
+    color: #007bff; /* Example color */
+    font-size: 16px; /* Example size */
+}
+.ecm-tabs {
+    width: 100%;
+	position: relative;
+}
+
+.ecm-tab-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.ecm-tab-item {
+    margin-right: 10px;
+}
+
+.ecm-tab-content {
+    display: none;
+    margin-top: -1px;
+}
+
+.ecm-tab-item a {
+    display: block;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    text-decoration: none !important;
+    color: #000;
+}
+
+.ecm-tab-item a:hover {
+    background-color: #e9e9e9;
+}
+
+.ecm-tab-item a.active {
+    background-color: #fff;
+}
+.forum-category h2 .fas {
+    margin-right: 10px;
+    color: #ccc;
+    font-size: 18px;
+}
+
+/*----------------Form----------------------*/
+.forum-post-form form#myForm {
+    max-width: 800px;
+	margin:0 auto;
+}
+._upvote-form .tox.tox-tinymce{
+	width:100% !important;
+}
+.forum-post-form .masthead__underlay{
+	display:none;
+}
+.forum-post-form input#title, .forum-post-form input#link, .forum-post-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px #e7e6e6 solid;
+	font-family: sans-serif;
+    font-size: 16px;
+}
+.forum-post-form input.poll-option, input[type="datetime-local"]{
+	width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px #e7e6e6 solid;
+	font-family: sans-serif;
+    font-size: 16px;
+	padding-right:20px;
+	
+}
+.forum-post-form .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+	position: relative;
+	width:125px;
+	margin: 25px 0;
+}
+.forum-post-form input.custom-file-input {
+    position: relative;
+}
+.forum-post-form .custom-file-input::before {
+    content: 'Upload Image';
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px 15px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: #0054b4;
+    color: white;
+    position: absolute;
+		top:15px;
+}
+.forum-post-form .custom-file-input:disabled::before{
+	background:#ccc;
+	
+}
+.forum-post-form #add-image, .forum-post-form input[type="submit"], .forum-post-form #add-poll-option{
+	display: inline-block;
+    border-radius: 10px;
+    padding: 10px 15px;
+    outline: none;
+	border:none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: #0054b4;
+    color: white;
+	
+}
+a.delete-poll-option {
+    width: 20px;
+    height: 38px;
+    background: #0054b4;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    top: -1.5px;
+    text-align: center;
+    font-family: monospace;
+    line-height: 35px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: -20px;
+}
+a.delete-poll-option:hover, .forum-post-form #add-poll-option:hover{
+	color:white;
+	text-decoration: none;
+	cursor: pointer;
+}
+.forum-post-form input[type="submit"]{
+    background: #2c0032;
+
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.forum-post-form header.entry-header{
+	background-color:white;
+	background-image:none;
+	border:0;
+	min-height:30px;
+	padding:0;
+	text-align: center;
+}
+.forum-post-form h1.entry-title{
+	color:black;
+	padding:0;
+}
+.upvote-categories {
+    display: flex;
+    justify-content: center;
+}
+.upvote-categories a, .upvote-categories a:focus {
+    display: block;
+    background: #33739a;
+    color: white;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.upvote-categories a:hover{
+	background:#4287b1;
+	text-decoration: none;
+	color:white;
+}
+._author h2 {
+    max-width: 690px;
+	width: 90%;
+}
+._forum-form form#forumForm {
+    max-width: 800px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 700px) {
+	._upvote-form .tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary{
+		flex-wrap: wrap !important;
+	}
+	article._upvote-article {
+		padding:20px;
+		min-width:270px;
+	}
+	.slideshow {
+    margin: 0 auto;
+    display: block;
+}
+	._upvote-section iframe{
+	max-width:100%;
+	margin: 0 auto;
+    display: block;
+}
+	.forum-post-form input.poll-option, input[type="datetime-local"]{
+	width: 50%;
+}
+}
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #33739a;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  width:100%;
+  max-width:300px;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+	display: flex;
+    justify-content: center;
+	  width:100%;
+  max-width:300px;
+	text-align: center;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 11;
+  margin-top: 48px;
+  width:100%;
+  max-width:300px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+
+  text-decoration: none;
+  display: block;
+	border:0;
+	border-radius: 2px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #4287b1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #4287b1;
+}
+._mobile-logo .user-points {
+    color: white;
+    font-size: 12px;
+}
+#secondary .user-points {
+    font-size: 12px;
+}
+.a2a_kit.a2a_kit_size_32.a2a_default_style span {
+		font-family:'Oswald';
+		float: left;
+		width: 25px;
+    	height: 25px;
+}
+	.a2a_kit.a2a_kit_size_32.a2a_default_style {
+    position: absolute;
+    right: 0px;
+    top: -41px;
+}
+	.splide__slide{
+		position:relative;
+	}
+	p._image-description {
+    position: absolute;
+    padding: 10px;
+    bottom: -18px;
+    background: #1863dcad;
+    width: 100%;
+    font-family: 'Oswald';
+    color: white;
+}
+	.splide__list, ._float  {
+    background: rgba(0, 0, 0, 0);
+}
+	.splide__list li {
+    max-height: 420px;
+}
+	.splide__list {
+    align-items: center;
+}
+@media only screen and (max-width: 700px) {
+	._float {
+    margin: 0;
+}
+		.upvote-poll ._author{
+			padding-left:40px;
+		}
+	._author {
+    margin: 10px 0 20px 30px;
+}
+}
+.poll-result-container{
+	max-width:1000px;
+	margin: 50px 0;
+}
+.vote-count {
+    flex: 1;
+    padding-left: 10px;
+    font-size: 12px;
+    text-align: right;
+}
+.poll-result {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.poll-result label {
+    width:100px;
+    padding-right: 10px;
+	font-size: 16px;
+    font-weight: bold;
+}
+.og_image-container {
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.poll-bar {
+    flex: 3;
+    background: #e6e6e6; /* Light grey background for unfilled part of bar */
+    height: 10px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.poll-fill {
+    background: #3498db; /* Change to your desired color */
+    height: 100%;
+}
+
+.vote-count {
+    flex: 1;
+    padding-left: 10px;
+}
+.upvote-icon {
+	position: absolute;
+    top: 2px;
+    right: 0px;
+    z-index: 11;
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    width: 50px;
+}
+.poll-result-container {
+    text-align: right;
+    font-size: 12px;
+}
+._disclaimer {
+    padding: 0 20px;
+    font-size: 12px;
+}
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* for 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+._archive-video{
+	max-width:600px;
+
+}
+._single-video{
+	max-width:1000px;
+	margin:0 auto;
+}
+._upvote-article ._author a:hover{
+text-decoration: none;	
+}
+#poll-options-container p:empty {
+    display: none;
+}
+.poll-option-container {
+    margin-bottom: 20px;
+}
+a#add-poll-option {
+    margin-bottom: 20px;
+}
+div#upvote_post-content {
+    margin-bottom: 20px;
+}
+.upvote-icon-sticky {
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+div#upvote_post-sticky {
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.upvote-icon-sticky img {
+    width: 30px;
+}
+.single-upvote_post article._ads, .post-type-archive-upvote_post article._ads, .tax-upvote_category ._ads{
+    background: none;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    border-top: 0;
+    margin: 0 auto 30px;
+}
+.ecm-friends{
+	margin:20px 0;
+}
+table.friend-list {
+    font-size: 16px;
+}
+.friend-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.friend-list th, .friend-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.friend-list th {
+    background-color: #0054b4;
+}
+span.ecm-like-count {
+    font-size: 14px;
+    padding-right: 40px;
+}
+span.ecm-dislike-count {
+    font-size: 14px;
+    padding-right: 40px;
+}
+#newReportsIndicator {
+    background-color: red;
+    color: white;
+    padding: 2px 4px;
+    margin-left: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    right: 0px;
+    top: -11px;
+}
+.user-profile-tabs ul.tabs li{
+	position: relative;
+}
+/* CSS for the table container */
+.table-container {
+    overflow-x: auto;
+}
+
+/* CSS for the table itself */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+	font-size: 14px;
+}
+
+/* CSS for table headers */
+.table-container th {
+    background-color: #2c0032;
+    font-size: 14px;
+}
+
+/* CSS for table rows */
+.table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* CSS for table cells */
+.table-container td, .table-container th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .table-container {
+        overflow-x: auto;
+    }
+}
+
+button.ecm-remove-friend, button.ecm-block-unblock-friend, button#save-post-btn, button.reply-button, button.report-button, button.share-link-btn, button.delete-post, button.delete-comment, button.moderate-post, button.moderate-comment {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 12px !important;
+    background: #0054b4;
+    color: white;
+	margin: 0 10px 10px 0;
+	position: absolute;
+    right: 0px;
+}
+button.ecm-remove-friend, button.ecm-block-unblock-friend{
+	position: relative;
+}
+button.share-link-btn{
+	top:0;
+}
+button.report-button, button.delete-post, button.delete-comment, button.moderate-post, button.moderate-comment{
+	background: red;
+	position: relative;
+}
+.post_buttons{
+	position: absolute;
+	right:0;
+	top:-35px;
+}
+button.reply-button, button.report-button{
+	position: relative;
+}
+
+.forum-container {
+    position: relative;
+	min-height:450px;
+}
+.ecm-actions{
+	text-align: center !important;
+}
+
+.ecm-forum-post-container {
+    display: flex;
+    align-items: flex-start;
+}
+.ecm-forum-comment-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 10px;
+    border-top: 1px #eee solid;
+    margin-top: 10px;
+    position: relative;
+    min-height: 40px;
+}
+.reply-form-container {
+	position: relative;
+    margin-top: 0px;
+}
+
+.author-info {
+    width: 30%;
+    padding-right: 20px; /* Adjust as needed */
+}
+
+.post-content {
+    width: 70%;
+    padding-left: 20px; /* Adjust as needed */
+	position: relative;
+	border-left: 1px solid #ccc; /* Optional */
+}
+
+.author-info p, .post-meta span {
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.reply-btn, .share-link-btn {
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    /* Add additional styling as desired */
+}
+.ecm-like-dislike {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-right-radius: 10px;
+    font-size: 16px;
+    z-index: 1;
+	bottom: 20px;
+
+}
+.ecm-forum-comment-container .ecm-like-dislike{
+	 bottom: -20px;
+}
+.ecm-like-btn{
+font-size: 0;
+    padding: 5px;
+    border: solid #ddd;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    background: transparent;
+    cursor: pointer;
+}
+.ecm-dislike-btn{
+    font-size: 0;
+    padding: 5px;
+    border: solid #ddd;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    background: transparent;
+    cursor: pointer;
+}
+._breadcrumb {
+    margin: 20px 0 40px;
+    font-size: 24px;
+}
+._breadcrumb a, .breadcrumb-post {
+    font-size: 17px;
+}
+.author-info{
+	padding-bottom:40px;
+}
+.author-info p {
+    font-size: 16px;
+    line-height: 8px;
+}
+i.fa.fa-trophy, i.fa.fa-pencil-alt, i.fa.fa-calendar-alt, i.fa.fa-gamepad, i.fa.fa-heart, i.fa-solid.fa-tag, i.fa-solid.fa-paperclip{
+    color: #007bff;
+}
+div#forums {
+    margin-bottom: 100px;
+	border:1px #ddd solid;
+}
+.cat-sep-title {
+    padding: 10px 20px;
+    border-bottom: 1px #ddd solid;
+    background: #33739a;
+    color: white;
+	font-family: 'Oswald';
+    font-size: 26px;
+}
+.cat-item {
+    border-bottom: 1px #ddd solid;
+    padding: 10px 150px 10px 10px;
+	position: relative;
+}
+
+.cat-item:nth-child(even){
+	background:#f5f4f4;
+}
+.cat-count {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    font-size: 14px;
+}
+.latest-post {
+    font-size: 14px;
+    margin-left: 50px;
+}
+.cat-item a {
+    text-decoration: none !important;
+    font-weight: bold;
+}
+.cat-item a:hover{
+	color:#72aee6 !important;
+}
+i.fas.fa-comments {
+    color: #0054b4;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+/* General form styling */
+#create-category-form, #create-topic-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+	margin-bottom:100px;
+}
+
+#create-category-form label, #create-topic-form label{
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-family: "Oswald", sans-serif;
+}
+
+#create-category-form input[type="text"],
+#create-category-form input[type="number"],
+#create-category-form select,
+#create-topic-form input[type="text"],
+#create-topic-form input[type="number"],
+#create-topic-form select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	font-size: 17px;
+}
+.explain {
+    font-size: 12px;
+    margin: -10px 0px 20px 5px;
+}
+
+#parent-category {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Submit button styling */
+#create-category-form input[type="submit"], #create-topic-form input[type="submit"], .reply-form-container input[type="submit"]{
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: sans-serif;
+    background: #2c0032;
+    color: white;
+    margin-top: 20px;
+}
+
+#create-category-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+input#tags {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px #e7e6e6 solid;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+div#forum_post-tags {
+    margin-top: 20px;
+}
+.tags {
+    font-size: 16px;
+}
+.latest-post {
+    margin-bottom: 10px;
+}
+.latest-post a {
+    color: #0088fd;
+    font-weight: normal;
+    font-size: 14px;
+}
+.ecm_forum .a2a_kit.a2a_kit_size_32.a2a_default_style{
+	right:40px;
+}
+
+/*---------Responsive-----------*/
+
+@media only screen and (min-width: 425px) {
+	.ecm-messaging-container {
+		 width: 300px; /* Adjust as needed */
+	}
+	.ecm-chat-box {
+    margin-bottom: 20px;
+	border-radius: 5px;
+    height: inherit;
+}
+	.ecm-chat-messages {
+    max-height: 200px;
+	
+}
+	.forum-posts-ticker ul {
+	width:auto;
+}
+}
+.ecm_forum {
+    padding-right: 40px;
+}
+.ecm_forum h1 {
+    padding-right: 120px;
+}
+li.ecm-tab-item._create a {
+    background: #e7e3e3;
+}
+div#author-info {
+    display: block;
+    padding-bottom: 30px;
+}
+ul.topics-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#ticker-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #0054b4; /* Adjust transparency with the alpha value */
+  z-index: 1000; /* Ensure it's above other content */
+	position: relative;
+	min-height: 32px;
+}
+
+.ticker-item {
+  display: none;
+  padding: 5px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+.ticker-item a {
+    color:white;
+	text-decoration: none;
+}
+.ticker-item a:hover {
+    color:white;
+	text-decoration: underline !important;
+}
+div#ticker-wrapper:before {
+    content: 'Latest Forum Posts: ';
+    color: white;
+    position: absolute;
+    top: 5px;
+	left:20px;
+	font-size: 14px;
+}
+#ecmOpenChat {
+    position: relative;
+	padding-right:30px !important;
+}
+#ecmOpenChat:after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    right: 9px;
+    width: 10px;
+    height: 10px;
+    background-color: lightgrey;
+    border-radius: 50%;
+}
+#ecmOpenChat.has-requests:after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    right: 9px;
+    width: 10px;
+    height: 10px;
+    background-color: #00ed48;
+    border-radius: 50%;
+}
+.comment-like-dislike-counts {
+        padding-left: 60px;
+    position: relative;
+    top: 7px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .friend-list {
+        border: 0;
+    }
+
+    .friend-list thead {
+        display: none;
+    }
+
+    .friend-list tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .friend-list td {
+        display: block;
+       text-align: right;
+        font-size: 16px;
+        border-bottom: 1px dotted #ddd;
+    }
+
+    .friend-list td::before {
+        content: attr(data-label);
+        float: left;
+		font-weight: bold;
+    }
+	#newReportsIndicator {
+    top: 0px;
+}
+	.ecm-tab-list{
+		display: block;
+	}
+	.ecm_forum {
+    padding: 0px;
+}
+	i.fas.fa-comments{
+		display:none;
+	}
+	.cat-count
+	{
+		position: relative;
+		top:auto;
+		right:inherit;
+	}
+	.latest-post{
+		margin:0;
+	}
+	button#save-post-btn{
+		top:-50px;
+	}
+	.ecm-forum-post-container{
+		display:block;
+	}
+	.author-info p{
+		line-height: 22px;
+		margin:2px;
+	}
+	.author-info, .post-content{
+		width:100%;
+	}
+	.post-content {
+    border: 0;
+    border-top: 1px grey solid;
+    padding: 20px 0 40px;
+    margin-top: 30px;
+	}
+	button.share-link-btn {
+    top: -55px;
+}
+	.ecm-like-dislike{
+		bottom: 60px;
+	}
+	.ecm-forum-comment-container .ecm-like-dislike{
+		bottom: 20px;
+	}
+	.cat-item a {
+    display: block;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+	.cat-item {
+		padding:10px;
+}
+	button#ecmOpenChat{
+		bottom:45px;
+	}
+button.ecm-chat-send {
+    padding: 15px;
+    font-size: 20px;
+    right: 15px;
+    position: absolute;
+}
+	.ecm-chat-box {
+		padding-bottom:60px;
+	}
+	.ecm_forum h1 {
+    padding-right: 40px;
+}
+	.ecm-forum-comment-container{
+		display:block;
+	}
+	div#author-info {
+    display: flex;
+    gap: 10px;
+}
+	._mobile{
+		display:none;
+	}
+	div#ticker-wrapper:before {
+    position: relative;
+    display: block;
+    text-align: center;
+		left:0;
+
+}
+#ticker-wrapper {
+    min-height: 55px;
+}
+	.ecm_forum .a2a_kit.a2a_kit_size_32.a2a_default_style{
+	right:0px;
+}
+
+}

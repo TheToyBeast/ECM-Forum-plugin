@@ -1,4 +1,4 @@
-# ECM Forum
+# ECM Forum plugin for WordPress
 
 The ECM Forum plugin is a custom forum solution for WordPress, designed specifically by Cristian Ibanez for East Coast Marketers. It offers robust features to manage forums, including user interactions, posts, likes, and messaging.
 
